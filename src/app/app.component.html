@@ -1,0 +1,22 @@
+<div class="container">
+  <form class="form-floating">
+    <h2>New Task</h2>
+    <input type="text" class="form-control" id="formGroupExampleInput" [placeholder]="userPlaceholder" #text /><br>
+    <button (click)='onAddTask(text)' type="button" class="btn btn-primary">Add Task</button>
+  </form>
+  <br />
+
+  <div>
+    <h2>Tasks</h2>
+    <ol class="list-group list-group-numbered">
+      <li *ngFor="let task of taskList; index as taskNo "
+        class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <div class="fw-bold">Task</div>
+          {{task}}
+        </div>
+        <button (click)='onDelete(taskNo)' type="button" class="btn btn-danger">Danger</button>
+      </li>
+    </ol>
+  </div>
+</div>
